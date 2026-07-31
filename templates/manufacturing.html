@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Manufacturing — Bio Leaf Exports{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ url_for('home') }}">Home</a> / Manufacturing</div>
+    <h1>Our <em>manufacturing</em></h1>
+    <p>Our processing facility is equipped with modern machinery and follows international quality standards.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="split-block">
+    <div>
+      <div class="sec-eyebrow">State-of-the-Art Facility</div>
+      <h2 style="font-size:32px;font-weight:400;color:var(--forest);margin-bottom:24px;">Every ingredient passes through a controlled, hygienic, and traceable process before it reaches your dock.</h2>
+      <ul class="why-list" style="list-style:none;">
+        <li><div class="why-num">01</div><div><h5>Modern processing units</h5><p>Dedicated lines for washing, drying, and milling raw botanicals.</p></div></li>
+        <li><div class="why-num">02</div><div><h5>Advanced extraction technology</h5><p>Solvent and CO2 extraction options for standardized actives.</p></div></li>
+        <li><div class="why-num">03</div><div><h5>Hygienic environment</h5><p>Controlled temperature, humidity, and airflow throughout the facility.</p></div></li>
+        <li><div class="why-num">04</div><div><h5>Skilled & trained team</h5><p>Every operator is trained on GMP-aligned handling procedures.</p></div></li>
+      </ul>
+    </div>
+    <div class="split-visual">
+      <svg viewBox="0 0 200 200" fill="none">
+        <rect x="40" y="60" width="30" height="100" rx="4" fill="#e0c15c"/>
+        <rect x="85" y="40" width="30" height="120" rx="4" fill="#a8c398"/>
+        <rect x="130" y="70" width="30" height="90" rx="4" fill="#6b8f5a"/>
+        <circle cx="55" cy="50" r="8" fill="#faf7f0"/>
+        <circle cx="100" cy="30" r="8" fill="#faf7f0"/>
+        <circle cx="145" cy="60" r="8" fill="#faf7f0"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Capacity</div>
+    <h2>Built to <em>scale</em></h2>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">6</div><div class="lbl">Process Stages Monitored</div></div>
+    <div class="stat-cell"><div class="num">5+</div><div class="lbl">Botanical Product Lines</div></div>
+    <div class="stat-cell"><div class="num">100%</div><div class="lbl">Batch Documentation</div></div>
+    <div class="stat-cell"><div class="num">24-48h</div><div class="lbl">Quote Turnaround</div></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2>Want to see our <em>process</em> in detail?</h2>
+    <p>We're happy to walk you through our facility standards and documentation on a call.</p>
+    <a href="{{ url_for('contact') }}" class="btn-primary">Schedule a call &rarr;</a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}{{ product.common }} — Bio Leaf Exports{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ url_for('home') }}">Home</a> / <a href="{{ url_for('products') }}">Products</a> / {{ product.common }}</div>
+    <h1>{{ product.common }}</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail-grid">
+    <div class="detail-visual">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M100 180 C100 180 96 100 100 40" stroke="{{ product.color_b }}" stroke-width="2.5" fill="none"/>
+        <ellipse cx="70" cy="70" rx="26" ry="15" fill="{{ product.color_a }}" transform="rotate(-30 70 70)"/>
+        <ellipse cx="130" cy="70" rx="26" ry="15" fill="{{ product.color_b }}" transform="rotate(30 130 70)"/>
+        <ellipse cx="65" cy="105" rx="26" ry="15" fill="{{ product.color_b }}" transform="rotate(-25 65 105)"/>
+        <ellipse cx="135" cy="105" rx="26" ry="15" fill="{{ product.color_a }}" transform="rotate(25 135 105)"/>
+        <ellipse cx="100" cy="45" rx="22" ry="13" fill="{{ product.color_b }}"/>
+      </svg>
+    </div>
+
+    <div>
+      <div class="detail-latin">{{ product.latin }}</div>
+      <div class="detail-common">{{ product.common }}</div>
+      <p class="detail-tagline">{{ product.tagline }}</p>
+
+      <div class="badge-row">
+        {% for badge in product.badges %}
+        <span class="badge">{{ badge }}</span>
+        {% endfor %}
+      </div>
+
+      <p class="detail-desc">{{ product.description }}</p>
+
+      <div class="detail-forms">
+        <h5>Available Forms</h5>
+        <div class="form-tags">
+          {% for f in product.forms %}
+          <span class="form-tag">{{ f }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="detail-industries">
+        <h5>Industries</h5>
+        <div class="form-tags">
+          {% for ind in product.industries %}
+          <span class="form-tag">{{ ind }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <h5 style="font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--forest);margin-top:20px;margin-bottom:0;font-weight:600;">Specifications</h5>
+      <table class="spec-table">
+        {% for label, value in product.specs %}
+        <tr><td>{{ label }}</td><td>{{ value }}</td></tr>
+        {% endfor %}
+      </table>
+
+      <div class="detail-ctas">
+        <a href="{{ url_for('contact') }}?product_interest={{ product.common }}" class="btn-primary">Request a quote &rarr;</a>
+        <a href="mailto:karthik.eshwar@bioleafexports.com?subject=Datasheet request: {{ product.common }}" class="btn-secondary">Request datasheet</a>
+      </div>
+    </div>
+  </div>
+
+  {% if related %}
+  <div class="related-row">
+    <div class="sec-header left"><div class="sec-eyebrow">You might also need</div><h2 style="font-size:28px;">Related <em>botanicals</em></h2></div>
+    <div class="herbarium-grid" style="grid-template-columns:repeat(3,1fr);">
+      {% for p in related %}
+      <a href="{{ url_for('product_detail', slug=p.slug) }}" class="herb-card">
+        <div class="herb-card-index">No. {{ p.index }}</div>
+        <div class="herb-card-top">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M32 58C32 58 30 30 32 10" stroke="{{ p.color_b }}" stroke-width="2"/>
+            <ellipse cx="20" cy="22" rx="9" ry="5" fill="{{ p.color_a }}" transform="rotate(-30 20 22)"/>
+            <ellipse cx="44" cy="22" rx="9" ry="5" fill="{{ p.color_b }}" transform="rotate(30 44 22)"/>
+          </svg>
+        </div>
+        <div class="herb-card-body">
+          <div class="latin">{{ p.latin }}</div>
+          <div class="common">{{ p.common }}</div>
+          <div class="herb-view">View specimen &rarr;</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+{% endblock %}
