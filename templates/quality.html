@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Quality Assurance — Bio Leaf Exports{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ url_for('home') }}">Home</a> / Quality</div>
+    <h1>Quality <em>assurance</em></h1>
+    <p>We follow strict quality control measures at every step to ensure our products meet international standards.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Quality is Our Promise</div>
+    <h2>Tested at <em>every stage</em></h2>
+    <p>From raw material intake to finished product, every batch passes through documented checkpoints.</p>
+  </div>
+  <div class="step-grid">
+    <div class="step-cell">
+      <div class="step-index">01</div>
+      <div><h5>Raw Material Inspection</h5><p>Incoming botanicals are checked for identity, moisture, and contamination before acceptance.</p></div>
+    </div>
+    <div class="step-cell">
+      <div class="step-index">02</div>
+      <div><h5>In-Process Testing</h5><p>Samples are drawn at drying, milling, and extraction stages to track consistency.</p></div>
+    </div>
+    <div class="step-cell">
+      <div class="step-index">03</div>
+      <div><h5>Finished Product Testing</h5><p>Every batch is tested for microbial load, heavy metals, and active compound content.</p></div>
+    </div>
+    <div class="step-cell">
+      <div class="step-index">04</div>
+      <div><h5>Microbial Analysis</h5><p>Total plate count, yeast and mold, E. coli, and Salmonella screening on every lot.</p></div>
+    </div>
+    <div class="step-cell">
+      <div class="step-index">05</div>
+      <div><h5>Heavy Metal Analysis</h5><p>Lead, arsenic, cadmium, and mercury levels are verified against international limits.</p></div>
+    </div>
+    <div class="step-cell">
+      <div class="step-index">06</div>
+      <div><h5>Stability Testing</h5><p>Shelf-life studies confirm your ingredient performs from shipment to formulation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Certifications</div>
+    <h2>Working toward <em>global standards</em></h2>
+    <p>As a day-one exporter, we're actively pursuing the certifications our international partners expect.</p>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="badge-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h6>ISO 9001:2015</h6><div class="sub">In progress</div>
+    </div>
+    <div class="cert-card">
+      <div class="badge-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+      <h6>GMP Certified</h6><div class="sub">In progress</div>
+    </div>
+    <div class="cert-card">
+      <div class="badge-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M12 3v18"/></svg></div>
+      <h6>HACCP</h6><div class="sub">In progress</div>
+    </div>
+    <div class="cert-card">
+      <div class="badge-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></div>
+      <h6>FDA Registered Facility</h6><div class="sub">In progress</div>
+    </div>
+    <div class="cert-card">
+      <div class="badge-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 6 6 10 6 14a6 6 0 0012 0c0-4-2-8-6-12z"/></svg></div>
+      <h6>Organic</h6><div class="sub">In progress</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2>Need <em>documentation</em> for your import?</h2>
+    <p>We provide certificates of analysis, specification sheets, and safety data for every shipment.</p>
+    <a href="{{ url_for('contact') }}" class="btn-primary">Request documentation &rarr;</a>
+  </div>
+</section>
+
+{% endblock %}

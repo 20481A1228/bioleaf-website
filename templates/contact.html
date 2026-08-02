@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}Contact Us — Bio Leaf Exports{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ url_for('home') }}">Home</a> / Contact</div>
+    <h1>Get in <em>touch</em></h1>
+    <p>Tell us your ingredient, form, and volume — we'll send specifications and a quote within one business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="contact-grid">
+    <div>
+      <h2 style="font-size:26px;color:var(--forest);font-weight:400;margin-bottom:24px;">Send us a message</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form class="contact-form" method="post" action="{{ url_for('contact') }}">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" placeholder="United States">
+          </div>
+          <div class="form-group">
+            <label for="product_interest">Product of Interest</label>
+            <select id="product_interest" name="product_interest">
+              <option value="">Select a product</option>
+              {% for p in products %}
+              <option value="{{ p.common }}" {{ 'selected' if request.args.get('product_interest')==p.common }}>{{ p.common }}</option>
+              {% endfor %}
+              <option value="Custom">Custom ingredient</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" name="message" required placeholder="Tell us the ingredient, form, and quantity you're looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Send Message &rarr;</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="contact-info-card">
+        <h4>Contact Information</h4>
+        <div class="contact-info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 7l9 6 9-6M3 5h18v14H3z"/></svg>
+          <div>
+            <div class="label">Email</div>
+            <a class="value" href="mailto:karthik.eshwar@bioleafexports.com">karthik.eshwar@bioleafexports.com</a>
+          </div>
+        </div>
+        <div class="contact-info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+          <div>
+            <div class="label">Phone</div>
+            <a class="value" href="tel:+917416571341">+91 7416571341</a>
+          </div>
+        </div>
+        <div class="contact-info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div class="label">Location</div>
+            <div class="value">India</div>
+          </div>
+        </div>
+        <div class="contact-info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div>
+            <div class="label">Response Time</div>
+            <div class="value">Within 1 business day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

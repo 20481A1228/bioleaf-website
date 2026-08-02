@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}About Us — Bio Leaf Exports{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="{{ url_for('home') }}">Home</a> / About</div>
+    <h1>About <em>us</em></h1>
+    <p>A founder-led botanical export house, built from day one on traceability and direct relationships.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="split-block">
+    <div>
+      <div class="sec-eyebrow">Who We Are</div>
+      <h2 style="font-size:32px;font-weight:400;color:var(--forest);margin-bottom:20px;">Bio Leaf Exports is a leading manufacturer and exporter of premium botanical ingredients, purpose-built to serve pharmaceutical, cosmetic, and nutraceutical companies worldwide.</h2>
+      <p style="color:var(--ink-soft);font-size:15px;">Our commitment to quality, traceability, and customer satisfaction drives everything we do. Every ingredient that leaves our facility is documented from the field it was grown in to the shipment that reaches your dock.</p>
+    </div>
+    <div class="split-visual">
+      <svg viewBox="0 0 200 200" fill="none">
+        <ellipse cx="100" cy="130" rx="70" ry="20" fill="#0f2613"/>
+        <path d="M100 160 C100 160 90 100 100 30" stroke="#e0c15c" stroke-width="3" fill="none"/>
+        <ellipse cx="70" cy="70" rx="30" ry="18" fill="#a8c398" transform="rotate(-25 70 70)"/>
+        <ellipse cx="130" cy="70" rx="30" ry="18" fill="#6b8f5a" transform="rotate(25 130 70)"/>
+        <ellipse cx="65" cy="105" rx="30" ry="18" fill="#6b8f5a" transform="rotate(-20 65 105)"/>
+        <ellipse cx="135" cy="105" rx="30" ry="18" fill="#a8c398" transform="rotate(20 135 105)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="num">5+</div><div class="lbl">Botanical Ingredients</div></div>
+    <div class="stat-cell"><div class="num">4</div><div class="lbl">Industries Served</div></div>
+    <div class="stat-cell"><div class="num">Day 0</div><div class="lbl">Founded — 2026</div></div>
+    <div class="stat-cell"><div class="num">100%</div><div class="lbl">Direct Founder Contact</div></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="sec-header">
+    <div class="sec-eyebrow">What Drives Us</div>
+    <h2>Our <em>values</em></h2>
+  </div>
+  <div class="value-grid">
+    <div class="value-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h5>Farm-to-shipment traceability</h5>
+      <p>Every lot carries documentation from cultivation through to export, so you always know where your ingredient came from.</p>
+    </div>
+    <div class="value-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+      <h5>Consistent quality, every batch</h5>
+      <p>Standardized specifications mean your formulations behave the same way, shipment after shipment.</p>
+    </div>
+    <div class="value-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m5-2.13a4 4 0 100-8 4 4 0 000 8z"/></svg>
+      <h5>Direct, responsive partnership</h5>
+      <p>You work with the founder directly — no call centres, no lost-in-translation middlemen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="why-visual" style="max-width:800px;margin:0 auto;">
+    <div class="why-quote"><span class="gold-mark">&ldquo;</span>We built Bio Leaf Exports on one idea — every ingredient should carry the same integrity from the field it grew in to the formula it becomes.</div>
+    <div class="why-attribution">— Karthik Eshwar, Founder &amp; Export Head</div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2>Let's build a <em>direct partnership</em></h2>
+    <p>Reach out and speak with the founder directly about your ingredient needs.</p>
+    <a href="{{ url_for('contact') }}" class="btn-primary">Get in touch &rarr;</a>
+  </div>
+</section>
+
+{% endblock %}
